@@ -1,133 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Policy Agreement</title>
-<style>
-  body {
-    background: #121212;
-    color: #eee;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 0 20px;
-    line-height: 1.5;
-  }
-  h1 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #fff;
-    font-weight: 700;
-  }
-  p {
-    margin-bottom: 18px;
-    font-size: 1.1rem;
-  }
-  label {
-    font-weight: 600;
-    margin-bottom: 6px;
-    display: block;
-    color: #ccc;
-    font-size: 0.95rem;
-  }
-  input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 6px;
-    border: none;
-    font-size: 1rem;
-    background: #222;
-    color: #eee;
-    outline: none;
-    transition: background 0.2s ease;
-  }
-  input[type="text"]:focus {
-    background: #333;
-  }
-  button {
-    display: block;
-    margin: 0 auto 40px;
-    background: #1db954;
-    border: none;
-    color: white;
-    padding: 12px 40px;
-    font-size: 1.2rem;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  button:hover {
-    background: #17a44d;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agreement Form</title>
+  <style>
+    body {
+      background: #121212;
+      color: #eee;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      gap: 15px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    h1 {
+      text-align: center;
+      max-width: 600px;
+      user-select: none;
+    }
+    p {
+      max-width: 600px;
+      font-size: 14px;
+      line-height: 1.5;
+      user-select: none;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      user-select: none;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      background: #222;
+      color: #eee;
+      box-sizing: border-box;
+    }
+    button {
+      width: 300px;
+      padding: 10px;
+      background: #5865f2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background: #4752c4;
+    }
+    .status {
+      height: 20px;
+      font-weight: 600;
+      user-select: none;
+      max-width: 600px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
 
-  <h1>Policy Agreement</h1>
+  <h1>Agreement Form</h1>
 
   <p>
-    By engaging with this service, group, or platform, you acknowledge and agree to follow all stated rules, regulations, and guidelines as provided by the administrators. Any failure to comply with these requirements may result in disciplinary action, which can include, but is not limited to, warnings, temporary suspensions, or permanent bans.
-  </p>
-  <p>
-    In the event that your account is banned for any reason, you fully understand and agree that no refunds, reimbursements, or returns of Robux will be issued under any circumstances. This includes Robux you have spent, donated, transferred, or earned in connection with this service. Once a ban is applied, all in-game or platform-related assets linked to your account will be considered forfeited and permanently inaccessible.
-  </p>
-  <p>
-    This policy applies equally to all users, without exception. Bans are issued at the discretion of the administrators and are considered final unless explicitly overturned by an authorized appeal process. Attempting to bypass a ban through alternate accounts, technical manipulation, or any other method will be treated as a further violation and may result in additional action.
-  </p>
-  <p>
+    By engaging with this service, group, or platform, you acknowledge and agree to follow all stated rules, regulations, and guidelines as provided by the administrators. Any failure to comply with these requirements may result in disciplinary action, which can include, but is not limited to, warnings, temporary suspensions, or permanent bans.<br><br>
+    In the event that your account is banned for any reason, you fully understand and agree that no refunds, reimbursements, or returns of Robux will be issued under any circumstances. This includes Robux you have spent, donated, transferred, or earned in connection with this service. Once a ban is applied, all in-game or platform-related assets linked to your account will be considered forfeited and permanently inaccessible.<br><br>
+    This policy applies equally to all users, without exception. Bans are issued at the discretion of the administrators and are considered final unless explicitly overturned by an authorized appeal process. Attempting to bypass a ban through alternate accounts, technical manipulation, or any other method will be treated as a further violation and may result in additional action.<br><br>
     By signing below, you confirm that you have read, understood, and agree to this policy in full. You also accept responsibility for your actions and acknowledge that violating the rules may result in the permanent loss of your account access and any associated Robux or items.
   </p>
 
-  <form id="policyForm">
-    <label for="username">Roblox Username</label>
-    <input type="text" id="username" name="username" placeholder="Enter your Roblox username" required />
+  <label for="robloxUser">Roblox Username</label>
+  <input type="text" id="robloxUser" maxlength="50" placeholder="Enter your Roblox username" />
 
-    <label for="fullname">Full Name</label>
-    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required />
+  <label for="realName">Full Real Name</label>
+  <input type="text" id="realName" maxlength="100" placeholder="Enter your full real name" />
 
-    <label for="year">Date (click to fill today's date)</label>
-    <input type="text" id="year" name="year" placeholder="Date" required />
+  <button id="submitBtn">Submit</button>
 
-    <button type="submit">Submit</button>
-  </form>
+  <div class="status" id="status"></div>
 
-<script>
-  document.getElementById('year').addEventListener('click', () => {
-    const today = new Date();
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    const todayText = today.toLocaleDateString('en-US', options);
-    document.getElementById('year').value = todayText;
-  });
+  <script>
+    const submitBtn = document.getElementById('submitBtn');
+    const statusEl = document.getElementById('status');
 
-  document.getElementById('policyForm').addEventListener('submit', async e => {
-    e.preventDefault();
+    submitBtn.addEventListener('click', () => {
+      const username = document.getElementById('robloxUser').value.trim();
+      const fullname = document.getElementById('realName').value.trim();
 
-    const data = {
-      username: document.getElementById('username').value.trim(),
-      fullname: document.getElementById('fullname').value.trim(),
-      year: document.getElementById('year').value.trim()
-    };
+      if (!username || !fullname) {
+        statusEl.textContent = "Please fill in both fields.";
+        statusEl.style.color = "red";
+        return;
+      }
 
-    try {
-      const res = await fetch('https://l.webhook.party/hook/l2AtMbPnWHa8ttEY4ZugflcmKwWguDavK4gS03moFek%2BWAPsOK2top3rta8ivjqGHuHVHFpuzv2zNiq4ocpkWQG%2B1pq0GTF7BOs7g6IH4TmzxBheUJhRFrn0KaSZV%2BhzzRFuPFIfw5g2fUD2mq4MZ%2FDPEhiDpgSvQTomDRGyKVXJghgspmQP6aftOKClYFoj72TUe1K6TLKSv5jFL218SvkvEPEfi%2BmEwkICGWadFSZpCU1u2sT5NE%2Fb6xXXrqnZpwFuoKANf7%2B1MY6rc172DsbzEDSISHvBF0cWMyU3sTHuLPj10VT37RlAIah2sbr8%2B%2BtQQ2vcxweYI%2BKHSqObjf6fXuAhnvpQa0gVDWqLeeN%2FLuq02U0zYVZdj87AwHwBjEB7uMWRssQ%3D/7WBnO0ORVAz%2Fb46u', {
+      const content = `Real person: ${fullname}\nAgreed to the Terms/Policy/Rules`;
+
+      // Check size (5 KB max)
+      const encoder = new TextEncoder();
+      if (encoder.encode(content).length > 5 * 1024) {
+        statusEl.textContent = "Your input is too long. Please shorten it.";
+        statusEl.style.color = "red";
+        return;
+      }
+
+      fetch('https://l.webhook.party/hook/dBLE%2FXZVL3rf%2BqxgYuBOkE7yaPBtrMvsBWPb4aj42xCxsQTYbrSat62O0y%2Fusb6B98sXlO8m5ytCAFLupVHYBwjQrpQEGxsTP2%2BPt%2Fm8nD%2FBXardcG8rp1VUfs%2Bayyqy5579%2BZ7vtCso7iGrBAKFBBKsEWQnQMs%2FymjBS9e%2FRWF9U%2FH9j2xRwHOMkkZ7kSmHmlHrRqid1fa9vcH5L3hHSEzQGOtJq6nBxxWcV43HNMvmMMUp0lDOixYVF88uc9LZDYjGlGgHeLQ3QHVCKDPqglqDjquDtX9Sw57TbItAbxbe27mix4UllclQTFq7gXOcL6Uuf%2Bo9s0bF2Y0V%2BRWRXHKSUm7mzvhlgYjq4xN24SFSHI5q4rHkdwS57lE1ofFJeeaeE1Fq5Zw%3D/QUyt9US%2BZbXRjJNL', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: JSON.stringify({ content }),
+      })
+      .then(response => {
+        if (response.ok) {
+          statusEl.textContent = "Submission successful! ✅";
+          statusEl.style.color = "limegreen";
+          document.getElementById('robloxUser').value = '';
+          document.getElementById('realName').value = '';
+        } else {
+          throw new Error(`Server responded with ${response.status}`);
+        }
+      })
+      .catch(error => {
+        statusEl.textContent = `Error sending data: ${error.message}`;
+        statusEl.style.color = "red";
       });
-
-      if (res.ok) {
-        alert('Yo, info sent! You good.');
-        document.getElementById('policyForm').reset();
-      } else {
-        alert('Uh oh, something went wrong. Try again.');
-      }
-    } catch {
-      alert('Nope, error sending data. Check your connection.');
-    }
-  });
-</script>
+    });
+  </script>
 
 </body>
 </html>
