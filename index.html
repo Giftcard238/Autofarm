@@ -1,100 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Policy Agreement</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #121212;
-        color: white;
-        margin: 0;
-        padding: 20px;
-        line-height: 1.5;
-    }
-    h1 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    .policy-box {
-        background: #1e1e1e;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 20px;
-    }
-    input, button {
-        padding: 10px;
-        margin-top: 10px;
-        border-radius: 5px;
-        border: none;
-        font-size: 16px;
-    }
-    input[type="text"], input[type="date"] {
-        width: 100%;
-        box-sizing: border-box;
-    }
-    button {
-        background: #4CAF50;
-        color: white;
-        cursor: pointer;
-    }
-    button:hover {
-        background: #45a049;
-    }
+  body {
+    background: #121212;
+    color: #eee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.5;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+    font-weight: 700;
+  }
+  p {
+    margin-bottom: 18px;
+    font-size: 1.1rem;
+  }
+  label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+    color: #ccc;
+    font-size: 0.95rem;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+    background: #222;
+    color: #eee;
+    outline: none;
+    transition: background 0.2s ease;
+  }
+  input[type="text"]:focus {
+    background: #333;
+  }
+  .date-inputs {
+    display: flex;
+    gap: 12px;
+  }
+  .date-inputs input {
+    flex: 1;
+  }
+  button {
+    display: block;
+    margin: 0 auto 40px;
+    background: #1db954;
+    border: none;
+    color: white;
+    padding: 12px 40px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  button:hover {
+    background: #17a44d;
+  }
 </style>
 </head>
 <body>
 
-<h1>Policy Agreement</h1>
+  <h1>Policy Agreement</h1>
 
-<div class="policy-box">
-    <p>By engaging with this service, group, or platform, you acknowledge and agree to follow all stated rules, regulations, and guidelines as provided by the administrators. Any failure to comply with these requirements may result in disciplinary action, which can include, but is not limited to, warnings, temporary suspensions, or permanent bans.</p>
+  <p>
+    By engaging with this service, group, or platform, you acknowledge and agree to follow all stated rules, regulations, and guidelines as provided by the administrators. Any failure to comply with these requirements may result in disciplinary action, which can include, but is not limited to, warnings, temporary suspensions, or permanent bans.
+  </p>
+  <p>
+    In the event that your account is banned for any reason, you fully understand and agree that no refunds, reimbursements, or returns of Robux will be issued under any circumstances. This includes Robux you have spent, donated, transferred, or earned in connection with this service. Once a ban is applied, all in-game or platform-related assets linked to your account will be considered forfeited and permanently inaccessible.
+  </p>
+  <p>
+    This policy applies equally to all users, without exception. Bans are issued at the discretion of the administrators and are considered final unless explicitly overturned by an authorized appeal process. Attempting to bypass a ban through alternate accounts, technical manipulation, or any other method will be treated as a further violation and may result in additional action.
+  </p>
+  <p>
+    By signing below, you confirm that you have read, understood, and agree to this policy in full. You also accept responsibility for your actions and acknowledge that violating the rules may result in the permanent loss of your account access and any associated Robux or items.
+  </p>
 
-    <p>In the event that your account is banned for any reason, you fully understand and agree that no refunds, reimbursements, or returns of Robux will be issued under any circumstances. This includes Robux you have spent, donated, transferred, or earned in connection with this service. Once a ban is applied, all in-game or platform-related assets linked to your account will be considered forfeited and permanently inaccessible.</p>
+  <form id="policyForm">
+    <label for="username">Roblox Username</label>
+    <input type="text" id="username" name="username" placeholder="Enter your Roblox username" required />
 
-    <p>This policy applies equally to all users, without exception. Bans are issued at the discretion of the administrators and are considered final unless explicitly overturned by an authorized appeal process. Attempting to bypass a ban through alternate accounts, technical manipulation, or any other method will be treated as a further violation and may result in additional action.</p>
+    <label for="fullname">Full Name</label>
+    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required />
 
-    <p>By signing below, you confirm that you have read, understood, and agree to this policy in full. You also accept responsibility for your actions and acknowledge that violating the rules may result in the permanent loss of your account access and any associated Robux or items.</p>
-</div>
-
-<form id="policyForm">
-    <label>Roblox Username:</label>
-    <input type="text" name="roblox_username" placeholder="Enter Roblox username" required>
-
-    <label>Signature:</label>
-    <input type="text" name="signature" placeholder="Type your full name" required>
-
-    <label>Date:</label>
-    <input type="date" name="date" required>
+    <div class="date-inputs">
+      <div style="flex:1;">
+        <label for="year">Year (click to fill today’s date)</label>
+        <input type="text" id="year" name="year" placeholder="Year" required />
+      </div>
+      <div style="flex:1;">
+        <label for="month">Month</label>
+        <input type="text" id="month" name="month" placeholder="Month" required />
+      </div>
+      <div style="flex:1;">
+        <label for="day">Day</label>
+        <input type="text" id="day" name="day" placeholder="Day" required />
+      </div>
+    </div>
 
     <button type="submit">Submit</button>
-</form>
+  </form>
 
 <script>
-document.getElementById("policyForm").addEventListener("submit", function(e) {
+  document.getElementById('year').addEventListener('click', () => {
+    const today = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const todayText = today.toLocaleDateString('en-US', options);
+    document.getElementById('year').value = todayText;
+  });
+
+  document.getElementById('policyForm').addEventListener('submit', async e => {
     e.preventDefault();
 
     const data = {
-        roblox_username: e.target.roblox_username.value,
-        signature: e.target.signature.value,
-        date: e.target.date.value
+      username: document.getElementById('username').value.trim(),
+      fullname: document.getElementById('fullname').value.trim(),
+      year: document.getElementById('year').value.trim(),
+      month: document.getElementById('month').value.trim(),
+      day: document.getElementById('day').value.trim()
     };
 
-    fetch("https://l.webhook.party/hook/dkRB4bEV9vBLvOTYPo8DdSVBAiPaONAfzzjTwnW9bn2vxpCrQ3t5CJznDpHkUB8yqK5yFOuUl2H%2B3UcwazltLhzG4gh5aqVTBi3wAAjHoqFooLvfs4tQVS8OiwPyeXAlqbNT2aq8bdCo22ns2RxolJq8Bx7qrr14ht1blPKIbmUIFFR9JLpv8pnb7ci1da0xFPSDT1kIFyISqxOtk8A2fVDzHIIQsZshzk30vzKv8yxWw6ujDV97LwgJPbHCo0E8wuociJUdF%2FXvUrWi0zEBRzjm6JwVzgmp7V%2FTruItc6yJdehKKQoj63n5jPJYTPVZ9laFg2T8K3OPhmrraD%2BHU0eB03n36qq5Pm93EaZCI4kVwy%2Bgpx8DD%2BlUZKNHN9nFtztI8SiUG80%3D/GUVKktVqQ9P87klk", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
+    try {
+      const res = await fetch('https://l.webhook.party/hook/l2AtMbPnWHa8ttEY4ZugflcmKwWguDavK4gS03moFek%2BWAPsOK2top3rta8ivjqGHuHVHFpuzv2zNiq4ocpkWQG%2B1pq0GTF7BOs7g6IH4TmzxBheUJhRFrn0KaSZV%2BhzzRFuPFIfw5g2fUD2mq4MZ%2FDPEhiDpgSvQTomDRGyKVXJghgspmQP6aftOKClYFoj72TUe1K6TLKSv5jFL218SvkvEPEfi%2BmEwkICGWadFSZpCU1u2sT5NE%2Fb6xXXrqnZpwFuoKANf7%2B1MY6rc172DsbzEDSISHvBF0cWMyU3sTHuLPj10VT37RlAIah2sbr8%2B%2BtQQ2vcxweYI%2BKHSqObjf6fXuAhnvpQa0gVDWqLeeN%2FLuq02U0zYVZdj87AwHwBjEB7uMWRssQ%3D/7WBnO0ORVAz%2Fb46u', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
-    })
-    .then(() => {
-        alert("Form submitted successfully!");
-        e.target.reset();
-    })
-    .catch(err => {
-        alert("Error submitting form: " + err);
-    });
-});
+      });
+
+      if (res.ok) {
+        alert('Yo, info sent! You good.');
+        document.getElementById('policyForm').reset();
+      } else {
+        alert('Uh oh, something went wrong. Try again.');
+      }
+    } catch {
+      alert('Nope, error sending data. Check your connection.');
+    }
+  });
 </script>
 
 </body>
