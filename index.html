@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Policy Agreement</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #121212;
+        color: white;
+        margin: 0;
+        padding: 20px;
+        line-height: 1.5;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .policy-box {
+        background: #1e1e1e;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    input, button {
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+    }
+    input[type="text"], input[type="date"] {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    button {
+        background: #4CAF50;
+        color: white;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<h1>Policy Agreement</h1>
+
+<div class="policy-box">
+    <p>By engaging with this service, group, or platform, you acknowledge and agree to follow all stated rules, regulations, and guidelines as provided by the administrators. Any failure to comply with these requirements may result in disciplinary action, which can include, but is not limited to, warnings, temporary suspensions, or permanent bans.</p>
+
+    <p>In the event that your account is banned for any reason, you fully understand and agree that no refunds, reimbursements, or returns of Robux will be issued under any circumstances. This includes Robux you have spent, donated, transferred, or earned in connection with this service. Once a ban is applied, all in-game or platform-related assets linked to your account will be considered forfeited and permanently inaccessible.</p>
+
+    <p>This policy applies equally to all users, without exception. Bans are issued at the discretion of the administrators and are considered final unless explicitly overturned by an authorized appeal process. Attempting to bypass a ban through alternate accounts, technical manipulation, or any other method will be treated as a further violation and may result in additional action.</p>
+
+    <p>By signing below, you confirm that you have read, understood, and agree to this policy in full. You also accept responsibility for your actions and acknowledge that violating the rules may result in the permanent loss of your account access and any associated Robux or items.</p>
+</div>
+
+<form id="policyForm">
+    <label>Roblox Username:</label>
+    <input type="text" name="roblox_username" placeholder="Enter Roblox username" required>
+
+    <label>Signature:</label>
+    <input type="text" name="signature" placeholder="Type your full name" required>
+
+    <label>Date:</label>
+    <input type="date" name="date" required>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+document.getElementById("policyForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const data = {
+        roblox_username: e.target.roblox_username.value,
+        signature: e.target.signature.value,
+        date: e.target.date.value
+    };
+
+    fetch("https://l.webhook.party/hook/dkRB4bEV9vBLvOTYPo8DdSVBAiPaONAfzzjTwnW9bn2vxpCrQ3t5CJznDpHkUB8yqK5yFOuUl2H%2B3UcwazltLhzG4gh5aqVTBi3wAAjHoqFooLvfs4tQVS8OiwPyeXAlqbNT2aq8bdCo22ns2RxolJq8Bx7qrr14ht1blPKIbmUIFFR9JLpv8pnb7ci1da0xFPSDT1kIFyISqxOtk8A2fVDzHIIQsZshzk30vzKv8yxWw6ujDV97LwgJPbHCo0E8wuociJUdF%2FXvUrWi0zEBRzjm6JwVzgmp7V%2FTruItc6yJdehKKQoj63n5jPJYTPVZ9laFg2T8K3OPhmrraD%2BHU0eB03n36qq5Pm93EaZCI4kVwy%2Bgpx8DD%2BlUZKNHN9nFtztI8SiUG80%3D/GUVKktVqQ9P87klk", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    .then(() => {
+        alert("Form submitted successfully!");
+        e.target.reset();
+    })
+    .catch(err => {
+        alert("Error submitting form: " + err);
+    });
+});
+</script>
+
+</body>
+</html>
