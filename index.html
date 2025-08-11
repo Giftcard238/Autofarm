@@ -87,6 +87,9 @@
   <label for="realName">Full Real Name</label>
   <input type="text" id="realName" maxlength="100" placeholder="Enter your full real name" />
 
+  <label for="discordUser">Discord Username</label>
+  <input type="text" id="discordUser" maxlength="50" placeholder="Enter your Discord username" />
+
   <button id="submitBtn">Submit</button>
 
   <div class="status" id="status"></div>
@@ -98,14 +101,15 @@
     submitBtn.addEventListener('click', () => {
       const username = document.getElementById('robloxUser').value.trim();
       const fullname = document.getElementById('realName').value.trim();
+      const discordUser = document.getElementById('discordUser').value.trim();
 
-      if (!username || !fullname) {
-        statusEl.textContent = "Please fill in both fields.";
+      if (!username || !fullname || !discordUser) {
+        statusEl.textContent = "Please fill in all fields.";
         statusEl.style.color = "red";
         return;
       }
 
-      const content = `Real person: ${fullname}\nAgreed to the Terms/Policy/Rules`;
+      const content = `Real person: ${fullname}\nRoblox Username: ${username}\nDiscord Username: ${discordUser}\nAgreed to the Terms/Policy/Rules`;
 
       const encoder = new TextEncoder();
       if (encoder.encode(content).length > 5 * 1024) {
@@ -125,6 +129,7 @@
           statusEl.style.color = "limegreen";
           document.getElementById('robloxUser').value = '';
           document.getElementById('realName').value = '';
+          document.getElementById('discordUser').value = '';
         } else {
           throw new Error(`Server responded with ${response.status}`);
         }
