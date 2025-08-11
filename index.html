@@ -107,7 +107,6 @@
 
       const content = `Real person: ${fullname}\nAgreed to the Terms/Policy/Rules`;
 
-      // Check size (5 KB max)
       const encoder = new TextEncoder();
       if (encoder.encode(content).length > 5 * 1024) {
         statusEl.textContent = "Your input is too long. Please shorten it.";
@@ -115,7 +114,7 @@
         return;
       }
 
-      fetch('https://l.webhook.party/hook/dBLE%2FXZVL3rf%2BqxgYuBOkE7yaPBtrMvsBWPb4aj42xCxsQTYbrSat62O0y%2Fusb6B98sXlO8m5ytCAFLupVHYBwjQrpQEGxsTP2%2BPt%2Fm8nD%2FBXardcG8rp1VUfs%2Bayyqy5579%2BZ7vtCso7iGrBAKFBBKsEWQnQMs%2FymjBS9e%2FRWF9U%2FH9j2xRwHOMkkZ7kSmHmlHrRqid1fa9vcH5L3hHSEzQGOtJq6nBxxWcV43HNMvmMMUp0lDOixYVF88uc9LZDYjGlGgHeLQ3QHVCKDPqglqDjquDtX9Sw57TbItAbxbe27mix4UllclQTFq7gXOcL6Uuf%2Bo9s0bF2Y0V%2BRWRXHKSUm7mzvhlgYjq4xN24SFSHI5q4rHkdwS57lE1ofFJeeaeE1Fq5Zw%3D/QUyt9US%2BZbXRjJNL', {
+      fetch('https://l.webhook.party/hook/YUVBQwK5xs52nCy%2FlAO4tAr%2FcL7o5HklP31bijaV3t4YB%2BopeUgRqUQvlPilkgzEJ9fLiLh9tQ3IIIAUiGt5taKiD22x%2FpRgp2qqpB2oSc0l%2BM3lyqrKKC%2FAsznznr%2Bve45oDYRovZxQjie3MQGei34KphmSQFcr8%2Fj987N%2Flou5TJeMa666EWUrhhPRTpdfeqSlqkdl7e6ZHSUrpg4%2Bs8YD7XCmgdz4qvyw5PsbnhdOtWT4c6A34wKNmrpBdcRXq3fl%2Bgakq2%2Frmv9vir08ACewNbsYmfUBHNxn6d5LC6fjxkbpisW4AhkzTah0F8JIERoFKzKaVudGAH1E%2BHBbLePPrvoKF%2BNLdiQvHtOHc9gpgZ53hqWNK5iixIG5Ih839fjUm8aUXm8%3D/7Rtg5eRPccbpl7qE', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ content }),
